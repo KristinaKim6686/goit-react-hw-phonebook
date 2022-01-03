@@ -4,7 +4,7 @@ import { Container, MainHeader, Header } from "./App.styled";
 import ContactForm from "./Components/ContactForm";
 import ContactList from "./Components/ContactList";
 import Filter from "./Components/Filter";
-import FilterContacts from "./utils/contactFilter";
+
 import filterContacts from "./utils/contactFilter";
 import backgroundImage from "./img/winter-gc4450ba70_1920.jpg";
 
@@ -18,14 +18,8 @@ class App extends Component {
     ],
     filter: "",
   };
-  handleAddContact = (data) => {
-    // const { contacts } = this.state;
-    const { name, number } = data;
+  handleAddContact = (contact) => {
     const inputId = nanoid();
-    const contact = {
-      name,
-      number,
-    };
     if (this.state.contacts.some((el) => el.name === contact.name)) {
       alert(this.state.name + " is already in contacts");
       return;
