@@ -18,6 +18,7 @@ class App extends Component {
     ],
     filter: "",
   };
+
   handleAddContact = (contact) => {
     const inputId = nanoid();
     if (this.state.contacts.some((el) => el.name === contact.name)) {
